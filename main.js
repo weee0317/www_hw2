@@ -82,7 +82,7 @@ keys.addEventListener('click', e => {
                     firstValue = displayNum;
                     secondValue = calculator.dataset.modValue;
                 }
-                display.textContent = calculate(firstValue, operator, secondValue);
+                display.textContent = calculate(firstValue, operator, secondValue).toFixed(4);
             }
             calculator.dataset.modValue = secondValue;
             calculator.dataset.previousKeyType = 'equal-sign';
@@ -105,7 +105,6 @@ function changeFontSize(){
 
 
 function loadJSON() {
-    console.log('loading...')
     const list = document.querySelector(".jsonList");
     let selectedIndex = list.selectedIndex;
     let selected = list.options[selectedIndex].value;
@@ -115,7 +114,6 @@ function loadJSON() {
             return res.json();
         })
         .then(json => {
-            console.log(json);
             let data = json;
             let n1 = '';
             let op = '';
@@ -127,25 +125,24 @@ function loadJSON() {
                 op = data[i + 1]['value'];
                 n2 = data[i + 2]['value'];
                 result = calculate(n1, op, n2);
-                console.log(result);
             }
-            display.textContent = result;
+            display.textContent = result.toFixed(4);
         });
 }
 const calculate = (n1, op, n2) => {
     const firstNum = parseFloat(n1);
     const secondNum = parseFloat(n2);
     if (op === 'add' || op === '+') {
-        return (firstNum + secondNum).toFixed(4);
+        return (firstNum + secondNum);
     }
     if (op === 'subtract' || op === '-') {
-        return (firstNum - secondNum).toFixed(4);
+        return (firstNum - secondNum);
     }
     if (op === 'multiply' || op === '*') {
-        return (firstNum * secondNum).toFixed(4);
+        return (firstNum * secondNum);
     }
     if (op === 'divide' || op === '/') {
         if (n2 === '0') return 'Err';
-        else return (firstNum / secondNum).toFixed(4);
+        else return (firstNum / secondNum);
     }
 }
