@@ -142,7 +142,7 @@ const calculate = (n1, op, n2) => {
         return (firstNum * secondNum);
     }
     if (op === 'divide' || op === '/') {
-        if (n2 === '0') return 'Err';
+        if (n2 === '0') return display.textContent = 'Err';
         else return (firstNum / secondNum);
     }
 }
