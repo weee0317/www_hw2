@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xml:lang>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="calculator-screen">0</div>
+        <div class="calculator-keys">
+            <select name="list" class="jsonList">
+            <option value="test">Test</option>
+            <option value="Hidden1">Hidden1</option>
+            <option value="Hidden2">Hidden2</option>
+            <option value="test2">Test2</option>
+            <option value="test3">Test3</option>
+            </select>
+            <button type="button" class="load" data-action="load">load</button>
+            <button type="button" class="operator" data-action="add" value="+">+</button>
+            <button type="button" class="operator" data-action="subtract" value="-">-</button>
+            <button type="button" class="operator" data-action="multiply" value="&times;">&times;</button>
+            <button type="button" class="operator" data-action="divide" value="/">&divide;</button>
+
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" class="plus-minus" data-action="plus-minus">+/-</button>
+
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+
+            <button type="button" value="0">0</button>
+            <button type="button" class="decimal" data-action="decimal" value=".">.</button>
+            <button type="button" class="all-clear" data-action="all-clear" value="all-clear">AC</button>
+
+            <button type="button" class="equal-sign" data-action="equal-sign" value="=">=</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
